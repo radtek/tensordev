@@ -1,0 +1,74 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------
+|-> SUMARIO                                                                                                                                     | 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+  DESCRICAO...........: Servidor usado pelo time de banco de dados                                                                               
+  PCP RESPONSAVEL.....: PCP aplicacao VIVO <pcp-aplicacao@telefonica.com>                                                                        
+  ZELADORIA...........: Zeladoria integracao                                                                                                     
+  AMBIENTE............: PRODUCAO                                        [PRODUCAO|HOMOLOGACAO|DESENVOLVIMENTO]                                   
+  TIPO DE BANCO.......: RAC                                             [RAC|SINGLE INSTANCE]                                                    
+
+  -> IP                                                                                                                                          
+  IP             HOSTNAME                                                                                                                        
+  -------------- -------------------                                                                                                             
+  10.238.47.72   server1                                                                                                                         
+  10.238.47.73   server2                                                                                                                         
+  10.238.47.24   server3                                                                                                                         
+  10.238.47.26   server4 
+  
+  -> DISASTER RECOVERY                                                                                                                           
+  TIPO de DR            NENHUM                                          [NENHUM|DATAGUARD|BCV]                                                   
+  BROKER ATIVO?         NAO                                             [NAO|SIM]                                                                
+  STATUS DA BASE        N/A                                             [MOUNTED|OPEN READ ONLY|OPEN]                                            
+  HOST(S)               N/A                                                                                                                      
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+|-> TEMPLATE DE SERVICOS DO CLUSTER                                                                                                             |
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+ SERVICE_NAME     INSTANCE_NAME                        STATUS                                                                                    
+ ---------------- ------------------------------------ ---------                                                                                 
+ BILLING          gridpr3                               UP                      [UP|DOWN]                                                        
+ CACS             gridpr4                               UP                      [UP|DOWN]                                                        
+ COLLECTIONS      gridpr4                               DOWN                    [UP|DOWN]                                                        
+ DEFAULT          gridpr1                               UP                      [UP|DOWN]                                                        
+ DISPUTE          gridpr2                               UP                      [UP|DOWN]                                                        
+ DOCMGMT          gridpr3                               DOWN                    [UP|DOWN]                                                        
+ FINANCE          gridpr1                               UP                      [UP|DOWN]                                                        
+ INTEGRIS         gridpr4                               UP                      [UP|DOWN]                                                        
+ OTHER            gridpr2                               UP                      [UP|DOWN]                                                        
+ PLATFORM         gridpr3                               UP                      [UP|DOWN]                                                        
+ RATING           gridpr1                               UP                      [UP|DOWN]                                                        
+ REPORTS          gridpr2                               UP                      [UP|DOWN]                                                        
+ RTA              gridpr4                               UP                      [UP|DOWN]                                                        
+ USAGE            gridpr2                               UP                      [UP|DOWN]                                                        
+ USAGE2           gridpr1                               DOWN                    [UP|DOWN]                                                        
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+|-> TEMPLATE DE STATUS DAS INSTANCIAS                                                                                                           | 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+ INSTANCE_NAME                       HOST_NAME      STATUS                                                                                       
+ ----------------------------------- -------------- ---------                                                                                    
+ gridpr1                              server1        OPEN                      [OPEN|MOUNTED|SHUTDOWN]                                           
+ gridpr2                              server2        OPEN                      [OPEN|MOUNTED|SHUTDOWN]                                           
+ gridpr3                              server3        OPEN                      [OPEN|MOUNTED|SHUTDOWN]                                           
+ gridpr4                              server4        OPEN                      [OPEN|MOUNTED|SHUTDOWN]                                           
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+|-> BASELINE                                                                                                                                    | 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Sessões Ativas no gráfico OEM, entre 100 à 120 Sessões ativas e eventos de CPU, I/O e Cluster durante horário comercial/Dias da semana.         
+ URL IMAGEM:                                                                                                                                     
+ https://telefonicacorp.sharepoint.com/:i:/r/sites/brazil/RABBC01/Documentos%20Compartilhados/Baseline/atlys_gridpr_baseline.JPG?csf=1&e=GIIcQ8  
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+|-> ANOTACOES GERAIS                                                                                                                            | 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Proibido dar grant para qualquer usuario                                                                                                      
+ - Servico X fica fora por recomendacao do PCP                                                                                                   
+ - Acesso ao servidor somente pelo asabranca                                                                                                     
+ - !!!Queries em views do dicionario travarao o banco de dados!!!                                                                                
+
+-------------------------------------------------------------------------------------------------------------------------------------------------

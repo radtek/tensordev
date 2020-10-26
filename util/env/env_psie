@@ -1,0 +1,72 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------
+|-> SUMARIO                                                                                                                                     | 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+  DESCRICAO...........: Servidor do ambiente SIEBEL8                                                                           
+  PCP RESPONSAVEL.....: PCP aplicacao VIVO <pcp-aplicacao@telefonica.com>                                                                        
+  ZELADORIA...........: Zeladoria BI                                                                                                     
+  AMBIENTE............: PRODUCAO                                        [PRODUCAO|HOMOLOGACAO|DESENVOLVIMENTO]                                   
+  TIPO DE BANCO.......: RAC                                             [RAC|SINGLE INSTANCE]                                                    
+
+  -> IP                                                                                                                                          
+  IP             HOSTNAME                                                                                                                        
+  -------------- -------------------                                                                                                             
+  10.238.47.72   svux01                                                                                                                         
+  10.238.47.73   svux02                                                                                                                         
+  
+  -> DISASTER RECOVERY                                                                                                                           
+  TIPO de DR            BCV                                             [NENHUM|DATAGUARD|BCV]                                                   
+  BROKER ATIVO?         NAO                                             [NAO|SIM]                                                                
+  STATUS DA BASE        OPEN READ ONLY                                  [MOUNTED|OPEN READ ONLY|OPEN]                                            
+  HOST(S)               svux089                                                                                                                      
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+|-> TEMPLATE DE SERVICOS DO CLUSTER                                                                                                             |
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+ SERVICE_NAME     INSTANCE_NAME                        STATUS                                                                                    
+ ---------------- ------------------------------------ ---------                                                                                 
+ BILLING          psie3                               UP                      [UP|DOWN]                                                        
+ CACS             psie4                               UP                      [UP|DOWN]                                                        
+ COLLECTIONS      psie4                               DOWN                    [UP|DOWN]                                                        
+ DEFAULT          psie1                               UP                      [UP|DOWN]                                                        
+ DISPUTE          psie2                               UP                      [UP|DOWN]                                                        
+ DOCMGMT          psie3                               DOWN                    [UP|DOWN]                                                        
+ FINANCE          psie1                               UP                      [UP|DOWN]                                                        
+ INTEGRIS         psie4                               UP                      [UP|DOWN]                                                        
+ OTHER            psie2                               UP                      [UP|DOWN]                                                        
+ PLATFORM         psie3                               UP                      [UP|DOWN]                                                        
+ RATING           psie1                               UP                      [UP|DOWN]                                                        
+ REPORTS          psie2                               UP                      [UP|DOWN]                                                        
+ RTA              psie4                               UP                      [UP|DOWN]                                                        
+ USAGE            psie2                               UP                      [UP|DOWN]                                                        
+ USAGE2           psie1                               DOWN                    [UP|DOWN]                                                        
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+|-> TEMPLATE DE STATUS DAS INSTANCIAS                                                                                                           | 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+ INSTANCE_NAME                       HOST_NAME      STATUS                                                                                       
+ ----------------------------------- -------------- ---------                                                                                    
+ psie1                              svux01        OPEN                      [OPEN|MOUNTED|SHUTDOWN]                                           
+ psie2                              svux02        OPEN                      [OPEN|MOUNTED|SHUTDOWN]                                           
+ psie3                              svux03        OPEN                      [OPEN|MOUNTED|SHUTDOWN]                                           
+ psie4                              svux04        OPEN                      [OPEN|MOUNTED|SHUTDOWN]                                           
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+|-> BASELINE                                                                                                                                    | 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Sessões Ativas no gráfico OEM, entre 100 à 120 Sessões ativas e eventos de CPU, I/O e Cluster durante horário comercial/Dias da semana.         
+ URL IMAGEM:                                                                                                                                     
+ https://telefonicacorp.sharepoint.com/:i:/r/sites/brazil/RABBC01/Documentos%20Compartilhados/Baseline/atlys_psie_baseline.JPG?csf=1&e=GIIcQ8  
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+|-> ANOTACOES GERAIS                                                                                                                            | 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+ - Proibido dar grant para qualquer usuario                                                                                                      
+ - Servico X fica fora por recomendacao do PCP                                                                                                   
+ - Acesso ao servidor somente pelo asabranca                                                                                                     
+ - !!!Queries em views do dicionario travarao o banco de dados!!!                                                                                
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
